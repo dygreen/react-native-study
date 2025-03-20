@@ -36,8 +36,3 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
-/.idea/codeStyles/codeStyleConfig.xml
-/.idea/prettier.xml
-/.idea/codeStyles/Project.xml
-
-*.xml
