@@ -13,6 +13,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import { Inter_500Medium, useFonts } from '@expo-google-fonts/inter'
 import Animated, { LinearTransition } from 'react-native-reanimated'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { StatusBar } from 'expo-status-bar'
 import { Octicons } from '@expo/vector-icons'
 import { data } from '@/data/todos'
 
@@ -142,6 +143,7 @@ export default function Index() {
                 itemLayoutAnimation={LinearTransition}
                 keyboardDismissMode="on-drag" // 키보드가 올라와 있을 때 목록을 드래그하면 키보드가 사라지는 효과
             />
+            <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
         </SafeAreaView>
     )
 }
