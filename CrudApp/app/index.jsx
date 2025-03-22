@@ -11,6 +11,7 @@ import { useState, useContext } from 'react'
 import { ThemeContext } from '@/context/ThemeContext'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import { Inter_500Medium, useFonts } from '@expo-google-fonts/inter'
+import Animated, { LinearTransition } from 'react-native-reanimated'
 import { Octicons } from '@expo/vector-icons'
 import { data } from '@/data/todos'
 
@@ -99,11 +100,13 @@ export default function Index() {
                     />
                 </Pressable>
             </View>
-            <FlatList
+            <Animated.FlatList
                 data={todos}
                 renderItem={renderItem}
                 keyExtractor={(todo) => todo.id}
                 contentContainerStyle={{ flexGrow: 1 }}
+                itemLayoutAnimation={LinearTransition}
+                keyboardDismissMode="on-drag" // 키보드가 올라와 있을 때 목록을 드래그하면 키보드가 사라지는 효과
             />
         </SafeAreaView>
     )
